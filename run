@@ -1,0 +1,3 @@
+#!/bin/bash
+
+java -Dlogback.configurationFile=/configs/logback.xml -jar service.jar server configs/$1.yaml
