@@ -5,11 +5,15 @@
     </encoder>
   </appender>
 
-  <logger name="io.dropwizard.server.ServerFactory" level="INFO" additivity="false">
+  <logger name="io.dropwizard.server.ServerFactory" level="DEBUG" additivity="false">
     <appender-ref ref="STDOUT" />
   </logger>
 
-  <root level="INFO">
+  <logger name="com.bmontague.helloworld.tasks.HelloTask" level="DEBUG" additivity="false">
+    <appender-ref ref="STDOUT" />
+  </logger>
+
+  <root level="DEBUG">
     <appender-ref ref="STDOUT" />
   </root>
 </configuration>

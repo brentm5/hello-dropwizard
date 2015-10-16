@@ -7,5 +7,10 @@ server:
       port: 8081
 logging:
   level: INFO
+  loggers:
+    io.dropwizard: INFO
+    com.bmontague.helloworld: DEBUG
+  appenders:
+    - type: console
 
 name: "default"
