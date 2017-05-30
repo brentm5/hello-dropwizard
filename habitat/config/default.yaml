@@ -6,11 +6,11 @@ server:
     - type: http
       port: 8081
 logging:
-  level: INFO
+  level: {{cfg.logging.level}}
   loggers:
     io.dropwizard: INFO
     com.bmontague.helloworld: DEBUG
   appenders:
     - type: console
 
-name: "local"
+name: "{{cfg.server.name}}"

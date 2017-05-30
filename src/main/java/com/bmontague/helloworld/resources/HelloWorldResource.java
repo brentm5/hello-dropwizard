@@ -12,14 +12,18 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 public class HelloWorldResource {
 
-    public HelloWorldResource() { }
+    private String name;
+
+    public HelloWorldResource(String name) {
+      this.name = name;
+    }
 
     @GET
     @Timed
     @Counted
     @Gauge
     public String sayHello() {
-        return "Hello World";
+        return "Hello " + name + "!";
     }
 }
 

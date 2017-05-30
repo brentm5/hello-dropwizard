@@ -27,7 +27,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration> 
     public void run(HelloWorldConfiguration configuration, Environment environment) {
         environment.admin().addTask(new HelloTask());
         environment.healthChecks().register("hello", new HelloCheck());
-        environment.jersey().register(new HelloWorldResource());
+        environment.jersey().register(new HelloWorldResource(configuration.getName()));
     }
 
 }
