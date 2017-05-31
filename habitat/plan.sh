@@ -5,7 +5,7 @@ pkg_version="0.1.0"
 pkg_license=('Apache-2.0')
 pkg_upstream_url="https://github.com/brentm5/hello-dropwizard"
 pkg_build_deps=(core/jdk8 core/maven)
-pkg_deps=(core/jdk8)
+pkg_deps=(core/curl core/jdk8)
 
 pkg_exports=(
   [http]=server.http

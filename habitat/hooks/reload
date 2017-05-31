@@ -1,0 +1,20 @@
+#!/bin/bash
+
+exec 2>&1
+
+if [ -f {{pkg.svc_pid_file}} ]; then
+  echo "Start reload"
+
+  echo "Calling out to the admin port to stop traffic"
+  curl -X "POST" http://localhost:8081/tasks/hello
+
+  echo "Waiting 10 seconds"
+  sleep 10
+
+  echo "Quiting the application"
+  kill -s USR1 $(cat {{pkg.svc_pid_file}})
+
+  echo "End Reload, Don't worry habitat will restart it"
+else
+  echo "Reload not needed, service not running"
+fi
