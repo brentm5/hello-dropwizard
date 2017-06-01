@@ -21,7 +21,7 @@ do_build() {
 }
 
 do_install() {
-  mkdir -p "${pkg_prefix}/bin"
-  cp "${PLAN_CONTEXT}"/../target/helloworld-1.0-SNAPSHOT.jar "${pkg_prefix}/service.jar"
-  # cp "${PLAN_CONTEXT}"/../configs/* "${pkg_prefix}"
+  cd "${PLAN_CONTEXT}"/../target
+  FILE_NAME=$(find . -iname "helloworld*.jar" -exec basename {} \;)
+  cp $FILE_NAME "${pkg_prefix}/service.jar"
 }

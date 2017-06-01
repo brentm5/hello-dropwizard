@@ -1,7 +1,14 @@
+[service]
+name = 'default'
+
 [server]
 http = 8080
 admin = 8081
-name = 'default'
 
 [logging]
 level = 'INFO'
+
+[jvm]
+heap_min = '32m'
+heap_max = '64m'
+encoding = 'UTF-8'

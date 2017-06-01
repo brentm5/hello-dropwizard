@@ -5,5 +5,7 @@ cd {{pkg.svc_config_path}}
 exec 2>&1
 
 exec java -Dlogback.configurationFile=logback.xml \
-  -jar {{pkg.path}}/service.jar server default.yaml
-# exec java -Dlogback.configurationFile={{pkg.path}}/logback.xml -jar {{pkg.path}}/service.jar server {{pkg.path}}/default.yaml
+  -XX:+UseG1GC -XX:+AggressiveOpts \
+  -Xms{{cfg.jvm.heap_min}} -Xmx{{cfg.jvm.heap_max}} \
+  -Dfile.encoding="{{cfg.jvm.encoding}}" -server \
+  -jar {{pkg.path}}/service.jar server config.yaml

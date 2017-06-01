@@ -1,10 +1,10 @@
 server:
   applicationConnectors:
     - type: http
-      port: 8080
+      port: {{cfg.server.http}}
   adminConnectors:
     - type: http
-      port: 8081
+      port: {{cfg.server.admin}}
 logging:
   level: {{cfg.logging.level}}
   loggers:
@@ -13,4 +13,4 @@ logging:
   appenders:
     - type: console
 
-name: "{{cfg.server.name}}"
+name: "{{cfg.service.name}}"
