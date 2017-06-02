@@ -10,6 +10,7 @@
 
     <properties>
         <dropwizard.version>0.8.2</dropwizard.version>
+        <dd-trace.version>0.0.3</dd-trace.version>
     </properties>
 
     <dependencies>
@@ -17,6 +18,11 @@
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>com.squareup.okhttp3</groupId>
+          <artifactId>okhttp</artifactId>
+          <version>3.7.0</version>
         </dependency>
     </dependencies>
 
