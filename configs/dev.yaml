@@ -10,6 +10,7 @@ logging:
   loggers:
     io.dropwizard: INFO
     com.bmontague.helloworld: DEBUG
+    com.datadoghq.trace: DEBUG
   appenders:
     - type: console
 
