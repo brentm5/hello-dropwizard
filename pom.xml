@@ -10,7 +10,7 @@
 
     <properties>
       <dropwizard.version>0.8.2</dropwizard.version>
-      <dd-trace.version>0.0.4</dd-trace.version>
+      <dd-trace.version>0.0.5</dd-trace.version>
     </properties>
 
     <dependencies>
@@ -21,7 +21,7 @@
         </dependency>
         <dependency>
           <groupId>com.datadoghq</groupId>
-          <artifactId>dd-trace</artifactId>
+          <artifactId>dd-trace-annotations</artifactId>
           <version>${dd-trace.version}</version>
         </dependency>
         <dependency>
