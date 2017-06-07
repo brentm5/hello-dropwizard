@@ -2,6 +2,7 @@ package com.bmontague.helloworld.healthchecks;
 
 
 import com.codahale.metrics.health.HealthCheck;
+import io.opentracing.contrib.agent.Trace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
