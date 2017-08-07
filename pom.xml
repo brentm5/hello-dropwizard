@@ -10,7 +10,7 @@
 
     <properties>
       <dropwizard.version>0.8.2</dropwizard.version>
-      <dd-trace.version>0.0.5</dd-trace.version>
+      <dd-trace.version>0.2.0</dd-trace.version>
     </properties>
 
     <dependencies>

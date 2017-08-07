@@ -2,5 +2,5 @@
 
 java -Dlogback.configurationFile=configs/logback.xml \
   -Ddd.trace.configurationFile=dd-trace.yaml \
-  -javaagent:dd-java-agent-0.0.5.jar \
+  -javaagent:dd-java-agent.jar \
   -jar target/helloworld-1.0-SNAPSHOT.jar server configs/dev.yaml
