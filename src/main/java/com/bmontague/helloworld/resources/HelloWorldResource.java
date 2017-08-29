@@ -4,7 +4,6 @@ import com.bmontague.helloworld.models.Hello;
 import com.codahale.metrics.annotation.Gauge;
 import com.codahale.metrics.annotation.Timed;
 import com.codahale.metrics.annotation.Counted;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 

@@ -1,6 +1,6 @@
 package com.bmontague.helloworld.models;
 
-import io.opentracing.contrib.agent.Trace;
+import com.datadoghq.trace.Trace;
 
 /**
  * Created by bmontague on 6/2/17.
