@@ -1,6 +1,6 @@
 package com.bmontague.helloworld.models;
 
-import com.datadoghq.trace.Trace;
+import datadog.trace.api.Trace;
 
 /**
  * Created by bmontague on 6/2/17.

@@ -1,6 +1,7 @@
 package com.bmontague.helloworld.tasks;
 
 import com.google.common.collect.ImmutableMultimap;
+import datadog.trace.api.Trace;
 import io.dropwizard.servlets.tasks.Task;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
@@ -19,6 +20,7 @@ public class HelloTask extends Task{
     }
 
     @Override
+    @Trace
     public void execute(ImmutableMultimap<String, String> immutableMultimap, PrintWriter printWriter) throws Exception {
         LOG.debug("Running the Hello Task for fun");
         if (immutableMultimap.containsKey("name")) {
