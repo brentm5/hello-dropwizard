@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -f ./dd-trace-agent ]; then
+  wget -O dd-trace-agent 'https://github.com/DataDog/datadog-trace-agent/releases/download/6.3.1/trace-agent-darwin-amd64-6.3.1'
+  chmod 777 ./dd-trace-agent
+fi
+
+./dd-trace-agent -config ~/.datadog-agent/datadog.yaml

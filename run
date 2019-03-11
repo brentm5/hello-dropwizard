@@ -1,6 +1,10 @@
 #!/bin/bash
 
+if [ ! -f dd-java-agent.jar ]; then
+  wget -O dd-java-agent.jar 'https://search.maven.org/remote_content?g=com.datadoghq&a=dd-java-agent&v=LATEST'
+fi
+
 java -Dlogback.configurationFile=configs/logback.xml \
-  -Ddd.trace.configurationFile=dd-trace.yaml \
+  -Ddd.service.name=hello-dropwizard \
   -javaagent:dd-java-agent.jar \
   -jar target/helloworld-1.0-SNAPSHOT.jar server configs/dev.yaml

@@ -4,8 +4,12 @@ import com.bmontague.helloworld.models.Hello;
 import com.codahale.metrics.annotation.Gauge;
 import com.codahale.metrics.annotation.Timed;
 import com.codahale.metrics.annotation.Counted;
+import datadog.trace.api.Trace;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+
+import io.opentracing.Tracer;
+import io.opentracing.util.GlobalTracer;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -26,10 +30,15 @@ public class HelloWorldResource {
 
     @GET
     @Timed
+    @Trace
     @Counted
     @Gauge
     @Path("/hello")
     public Response sayHello() throws IOException {
+        Tracer tracer = GlobalTracer.get();
+        tracer.activeSpan().setTag("test_tag", "tag_value");
+        tracer.activeSpan().setBaggageItem("account_id", "1234213");
+        tracer.activeSpan().setBaggageItem("event_id", "sample-event");
         OkHttpClient client = new OkHttpClient().newBuilder().build();
 
         Request request = new Request.Builder()
@@ -44,6 +53,7 @@ public class HelloWorldResource {
 
     @GET
     @Timed
+    @Trace
     @Counted
     @Gauge
     @Path("/name")
@@ -53,6 +63,7 @@ public class HelloWorldResource {
 
     @GET
     @Timed
+    @Trace
     @Counted
     @Gauge
     public Response getRoot() {
